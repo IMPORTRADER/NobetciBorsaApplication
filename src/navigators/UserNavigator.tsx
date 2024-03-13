@@ -11,6 +11,7 @@ function HomeNavigator() {
 
 
 
+
     </Stack.Navigator>
   )
 }

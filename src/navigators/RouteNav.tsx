@@ -2,7 +2,7 @@ import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import HomeScreen from '../screens/HomeScreen'
 import RootNavigator from './RootNavigator'
-import IsmailScreen from '../screens/IsmailScreen'
+import SelectStock from '../screens/SelectStock'
 
 
 
@@ -12,7 +12,9 @@ function HomeNavigator() {
   return (
     <Stack.Navigator> 
         <Stack.Screen name="root" component={RootNavigator} options={{ headerShown: false }} />
-        <Stack.Screen name="ismail" component={IsmailScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ismail" component={SelectStock} options={{ headerShown: false }} />
+        <Stack.Screen name="home" component={HomeScreen} options={{ headerShown: false }} />
+
 
 
     </Stack.Navigator>

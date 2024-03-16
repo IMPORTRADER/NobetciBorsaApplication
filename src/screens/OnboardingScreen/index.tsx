@@ -1,10 +1,22 @@
 import React from 'react';
-import {View} from "react-native";
+import {Dimensions, Image, View} from "react-native";
 import Onboard from "../../components/Onboard";
 
 function Index() {
+    const {width, height} = Dimensions.get("window");
     return (
-        <View>
+        <View style={{justifyContent: 'center',
+            alignItems: 'center'}}>
+            <Image
+                source={require("../../../assets/onboarding/logo-with-text.png")}
+                style={{
+                    width: 170,
+                    height: 40,
+                    marginTop: 35,
+                    marginBottom: -125,
+                    resizeMode: 'stretch'
+                }}
+            />
             <Onboard/>
         </View>
     );

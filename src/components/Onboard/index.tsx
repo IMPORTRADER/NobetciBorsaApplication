@@ -7,7 +7,7 @@ function Index() {
 
     const data = [{
         title: 'Anlık Bildirim Özelliği',
-        text: 'Hisselerinizi takip edin, anlık bildirimlerle \n fiyat değişikliklerinden hemen haberdar \n olun.',
+        text: 'Hisselerinizi takip listenize ekleyin,\n anlık bildirimlerle fiyat değişikliklerinden \n hemen haberdar olun.',
         image: require('../../../assets/onboarding/onboard-1.png'),
     },
         {

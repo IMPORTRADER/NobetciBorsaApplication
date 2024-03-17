@@ -9,12 +9,12 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import styles from './styles';
-import {FontAwesome, Zocial} from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons"; // FontAwesome import edildi.
 
 function Index() {
     const [inputText, setInputText] = useState('');
     const [inputPass, setInputPass] = useState('');
-    const [inputRePass, setInputRePass] = useState('');
+    const [showPassword, setShowPassword] = useState(false); // Şifrenin görünürlüğünü kontrol etmek için bir state tanımlandı.
 
     const handleInputChange = (text: string) => {
         setInputText(text);
@@ -24,9 +24,9 @@ function Index() {
         setInputPass(text);
     };
 
-    const handleInputRePassChange = (text: string) => {
-        setInputRePass(text);
-    };
+    const navigateButtton = (email: string, password: string) => {
+        console.log("Email: " + email + " Password: " + password)
+    }
 
     const dismissKeyboard = () => {
         Keyboard.dismiss();
@@ -51,35 +51,28 @@ function Index() {
                     placeholder="Email"
                     keyboardType='email-address'
                 />
-
-                <TextInput
-                    style={[styles.input, styles.container, { borderColor: inputPass ? '#33D49D' : '#E2E8F0' }]}
-                    onChangeText={handleInputPassChange}
-                    value={inputPass}
-                    placeholder="Şifre"
-                    keyboardType='default'
-                    secureTextEntry={true}
-                />
-
-                <TextInput
-                    style={[styles.input, styles.container, { borderColor: inputRePass ? '#33D49D' : '#E2E8F0' }]}
-                    onChangeText={handleInputRePassChange}
-                    value={inputRePass}
-                    placeholder="Şifre Tekrar"
-                    keyboardType='default'
-                    secureTextEntry={true}
-                />
-
-                <View>
+                <View style={[styles.input, styles.container, { borderColor: inputPass ? '#33D49D' : '#E2E8F0' }]}>
+                    <TextInput
+                        style={{ flex: 1 }}
+                        onChangeText={handleInputPassChange}
+                        value={inputPass}
+                        placeholder="Şifre"
+                        keyboardType='default'
+                        secureTextEntry={!showPassword} // Şifrenin görünürlüğünü state'e göre ayarlanır.
+                    />
                     <TouchableOpacity
-                        style={[styles.container, styles.button]}
-                        onPress={() =>
-                            console.log("Email:", inputText)
-                        }>
-                        <Text style={styles.buttonText}>Devam Et</Text>
+                        onPress={() => setShowPassword(!showPassword)} // Göz simgesine basıldığında state'i tersine çevir.
+                    >
+                        <FontAwesome name={showPassword ? 'eye-slash' : 'eye'} size={20} color="#A0AEC0" />
                     </TouchableOpacity>
                 </View>
-
+                <TouchableOpacity
+                    style={[styles.container, styles.button]}
+                    onPress={() =>
+                        navigateButtton(inputText,inputPass)
+                    }>
+                    <Text style={styles.buttonText}>Devam Et</Text>
+                </TouchableOpacity>
                 <View style={{flexDirection:'row', alignItems:'center', marginTop:75}}>
                     <View style={{width:'35%', height:1, backgroundColor: '#E2E8F0', marginRight:10}}></View>
                     <Text style={{color: '#A0AEC0'}}>veya</Text>
@@ -92,7 +85,9 @@ function Index() {
                             console.log("google")
                         }>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <FontAwesome name="google" size={24} color="black" />
+                            <Image
+                                style={{width:24,height:24}}
+                                source={require("../../../assets/google.png")}/>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -101,7 +96,9 @@ function Index() {
                             console.log("appstore")
                         }>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Zocial name="appstore" size={24} color="black" />
+                            <Image
+                                style={{width:24,height:28,resizeMode:'stretch',marginBottom:4}}
+                                source={require("../../../assets/apple.png")}/>
                         </View>
                     </TouchableOpacity>
                 </View>

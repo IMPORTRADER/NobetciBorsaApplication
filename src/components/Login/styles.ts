@@ -3,7 +3,7 @@ import {StyleSheet, Dimensions} from "react-native";
 const {height,width} = Dimensions.get('window')
 const styles = StyleSheet.create({
     mainComponent:{
-        height: '100%',
+        marginTop:65,
         justifyContent: 'center',
         alignItems: 'center'
     },

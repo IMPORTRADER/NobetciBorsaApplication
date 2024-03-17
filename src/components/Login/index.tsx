@@ -73,7 +73,7 @@ function Index() {
                     }>
                     <Text style={styles.buttonText}>Devam Et</Text>
                 </TouchableOpacity>
-                <View style={{flexDirection:'row', alignItems:'center', marginTop:75}}>
+                <View style={{flexDirection:'row', alignItems:'center', marginTop:140}}>
                     <View style={{width:'35%', height:1, backgroundColor: '#E2E8F0', marginRight:10}}></View>
                     <Text style={{color: '#A0AEC0'}}>veya</Text>
                     <View style={{width:'35%', height:1, backgroundColor: '#E2E8F0', marginLeft:10}}></View>

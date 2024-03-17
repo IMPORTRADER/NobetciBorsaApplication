@@ -19,7 +19,7 @@ const ImageSVG = ({ width, height, color }) => (
 );
 
 
-function index() {
+function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
@@ -159,4 +159,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default index
+export default Index

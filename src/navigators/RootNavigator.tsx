@@ -12,8 +12,7 @@ const Tab = createBottomTabNavigator();
 
 function RootNavigator() {
     return (
-        <Tab.Navigator
-            initialRouteName='Ana Sayfa' // Burada initialRouteName'i LoadingScreen'e ayarlıyoruz
+        <Tab.Navigator// Burada initialRouteName'i LoadingScreen'e ayarlıyoruz
             screenOptions={{
                 tabBarHideOnKeyboard: true,
                 tabBarShowLabel: false,

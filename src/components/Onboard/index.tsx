@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {Button, Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import styles from "./styles";
-
+import {ParamListBase, useNavigation} from "@react-navigation/native";
+import {StackNavigationProp} from "@react-navigation/stack";
 function Index() {
     const { width, height } = Dimensions.get("window");
+    const {navigate} = useNavigation<StackNavigationProp<ParamListBase>>();
 
     const data = [{
         title: 'Anlık Bildirim Özelliği',
@@ -34,6 +36,7 @@ function Index() {
 
         return () => clearInterval(intervalId);
     }, [currentIndex]);
+
 
     return (
         <View>
@@ -86,13 +89,17 @@ function Index() {
                 />
                 <View style={styles.container}>
                     <TouchableOpacity
-                        style={StyleSheet.compose(styles.layout, styles.buttonLogin)}
-                        onPress={() => console.log('Giriş Yap pressed')}>
+                        style={[styles.layout, styles.buttonLogin]}
+                        onPress={() =>
+                            navigate("login")
+                    }>
                         <Text style={styles.buttonTextLogin}>Giriş Yap</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={StyleSheet.compose(styles.layout, styles.buttonRegister)}
-                        onPress={() => console.log('Kayıt Ol pressed')}>
+                        onPress={() =>
+                            navigate("register")
+                    }>
                         <Text style={styles.buttonTextRegister}>Kayıt Ol</Text>
                     </TouchableOpacity>
                 </View>

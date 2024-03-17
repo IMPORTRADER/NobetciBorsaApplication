@@ -6,7 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 
 
-const index = () => {
+const Index = () => {
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {
@@ -122,7 +122,7 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
 
 const styles = StyleSheet.create({
 

@@ -92,14 +92,14 @@ function Index() {
                         style={[styles.layout, styles.buttonLogin]}
                         onPress={() =>
                             navigate("login")
-                    }>
+                        }>
                         <Text style={styles.buttonTextLogin}>Giriş Yap</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={StyleSheet.compose(styles.layout, styles.buttonRegister)}
                         onPress={() =>
                             navigate("register")
-                    }>
+                        }>
                         <Text style={styles.buttonTextRegister}>Kayıt Ol</Text>
                     </TouchableOpacity>
                 </View>

@@ -1,11 +1,11 @@
 import React from 'react';
-import {Text, View} from "react-native";
-import Register from "../../components/Register";
+import {View} from "react-native";
+import RegisterContinue from "../../components/RegisterContinue";
 
 function Index() {
     return (
         <View style={{height: '100%', justifyContent: 'center', alignItems: 'center'}}>
-            <Register/>
+            <RegisterContinue/>
         </View>
     );
 }

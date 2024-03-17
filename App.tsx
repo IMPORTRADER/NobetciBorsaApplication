@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler'
 import RouteNav from './src/navigators/RouteNav';
@@ -6,9 +6,9 @@ import RouteNav from './src/navigators/RouteNav';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <RouteNav/>
-    </NavigationContainer>
+      <NavigationContainer>
+        <RouteNav/>
+      </NavigationContainer>
   );
 }
 

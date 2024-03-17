@@ -5,8 +5,7 @@ import Onboard from "../../components/Onboard";
 function Index() {
     const {width, height} = Dimensions.get("window");
     return (
-        <View style={{justifyContent: 'center',
-            alignItems: 'center'}}>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
             <Image
                 source={require("../../../assets/onboarding/logo-with-text.png")}
                 style={{

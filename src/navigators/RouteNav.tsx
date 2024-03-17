@@ -13,7 +13,10 @@ function HomeNavigator() {
 
   const Stack = createStackNavigator()
   return (
-    <Stack.Navigator initialRouteName='onboarding'>
+    <Stack.Navigator initialRouteName='onboarding' screenOptions={{
+        headerStyle: { elevation: 0 },
+        cardStyle: { backgroundColor: '#fff' }
+    }}>
         <Stack.Screen name="onboarding" component={OnboardingScreen} options={{ headerShown: false }} />
         <Stack.Screen name="root" component={RootNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="ismail" component={SelectStock} options={{ headerShown: false }} />

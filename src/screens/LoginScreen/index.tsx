@@ -4,7 +4,7 @@ import Login from "../../components/Login";
 
 function Index() {
     return (
-        <View>
+        <View style={{height: '100%', justifyContent: 'center', alignItems: 'center'}}>
             <Login/>
         </View>
     );

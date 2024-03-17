@@ -4,7 +4,7 @@ import {Text, View} from "react-native";
 function Index() {
     return (
         <View>
-            <Text>Login Screen Component</Text>
+            <Text>Register Continue Component</Text>
         </View>
     );
 }

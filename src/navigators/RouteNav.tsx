@@ -6,6 +6,7 @@ import SelectStock from '../screens/SelectStock'
 import OnboardingScreen from "../screens/OnboardingScreen";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
+import RegisterContinueScreen from "../screens/RegisterContinueScreen";
 
 
 
@@ -23,6 +24,7 @@ function HomeNavigator() {
         <Stack.Screen name="home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="register" component={RegisterScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="registerContinue" component={RegisterContinueScreen} options={{ headerShown: false }} />
 
     </Stack.Navigator>
   )

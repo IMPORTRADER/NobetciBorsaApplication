@@ -18,89 +18,36 @@ function Watchlist() {
 
 
     return (
-        
-        
-        
+
+
+
         <View style={styles.watchlistContainer}>
             <View style={styles.watchlistBar}>
                 <Text style={styles.barText}>Takip Listem</Text>
                 <TouchableOpacity >
-                    <Link  to={{ screen: 'ismail' }}>
+                    <Link to={{ screen: 'ismail' }}>
                         <AntDesign name="pluscircleo" size={24} color="#33D49D" />
                     </Link>
                 </TouchableOpacity>
             </View>
             <View style={styles.watchlistStocks}>
-                <View style={styles.stockContainer}>
-                    <View style={styles.stockState} ><AntDesign name="up" size={24} color="#33D49D" /></View>
-                    <View style={styles.stockInfo}>
-                        <Text style={styles.stockCode}>ARTMS</Text>
-                        <Text style={styles.stockName}>ARTEMİS HALI</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('stockdetail')}>
+                    <View style={styles.stockContainer}>
+                        <View style={styles.stockState}><AntDesign name="up" size={24} color="#33D49D" /></View>
+                        <View style={styles.stockInfo}>
+                            <Text style={styles.stockCode}>ARTMS</Text>
+                            <Text style={styles.stockName}>ARTEMİS HALI</Text>
+                        </View>
+                        <View style={styles.graph}>
+                            <Image source={require('../../assets/item/Group 21.png')} />
+                        </View>
+                        <View style={styles.priceContainer}>
+                            <Text style={styles.price}>&#x20BA;33,720</Text>
+                            <Text style={styles.change}>+ 0.81%</Text>
+                        </View>
                     </View>
-                    <View style={styles.graph}>
-                        <Image source={require('../../assets/item/Group 21.png')} />
-                    </View>
-                    <View style={styles.priceContainer} >
-                        <Text style={styles.price}>&#x20BA;33,720</Text>
-                        <Text style={styles.change}>+ 0.81%</Text>
-                    </View>
-                </View>
-                <View style={styles.stockContainer}>
-                    <View style={styles.stockState} ><AntDesign name="up" size={24} color="#33D49D" /></View>
-                    <View style={styles.stockInfo}>
-                        <Text style={styles.stockCode}>ARTMS</Text>
-                        <Text style={styles.stockName}>ARTEMİS HALI</Text>
-                    </View>
-                    <View style={styles.graph}>
-                        <Image source={require('../../assets/item/Group 21.png')} />
-                    </View>
-                    <View style={styles.priceContainer} >
-                        <Text style={styles.price}>&#x20BA;33,720</Text>
-                        <Text style={styles.change}>+ 0.81%</Text>
-                    </View>
-                </View>
-                <View style={styles.stockContainer}>
-                    <View style={styles.stockState} ><AntDesign name="up" size={24} color="#33D49D" /></View>
-                    <View style={styles.stockInfo}>
-                        <Text style={styles.stockCode}>ARTMS</Text>
-                        <Text style={styles.stockName}>ARTEMİS HALI</Text>
-                    </View>
-                    <View style={styles.graph}>
-                        <Image source={require('../../assets/item/Group 21.png')} />
-                    </View>
-                    <View style={styles.priceContainer} >
-                        <Text style={styles.price}>&#x20BA;33,720</Text>
-                        <Text style={styles.change}>+ 0.81%</Text>
-                    </View>
-                </View>
-                <View style={styles.stockContainer}>
-                    <View style={styles.stockState} ><AntDesign name="up" size={24} color="#33D49D" /></View>
-                    <View style={styles.stockInfo}>
-                        <Text style={styles.stockCode}>ARTMS</Text>
-                        <Text style={styles.stockName}>ARTEMİS HALI</Text>
-                    </View>
-                    <View style={styles.graph}>
-                        <Image source={require('../../assets/item/Group 21.png')} />
-                    </View>
-                    <View style={styles.priceContainer} >
-                        <Text style={styles.price}>&#x20BA;33,720</Text>
-                        <Text style={styles.change}>+ 0.81%</Text>
-                    </View>
-                </View>
-                <View style={styles.stockContainer}>
-                    <View style={styles.stockState} ><AntDesign name="up" size={24} color="#33D49D" /></View>
-                    <View style={styles.stockInfo}>
-                        <Text style={styles.stockCode}>ARTMS</Text>
-                        <Text style={styles.stockName}>ARTEMİS HALI</Text>
-                    </View>
-                    <View style={styles.graph}>
-                        <Image source={require('../../assets/item/Group 21.png')} />
-                    </View>
-                    <View style={styles.priceContainer} >
-                        <Text style={styles.price}>&#x20BA;33,720</Text>
-                        <Text style={styles.change}>+ 0.81%</Text>
-                    </View>
-                </View>
+                </TouchableOpacity>
+
             </View>
         </View >
     )

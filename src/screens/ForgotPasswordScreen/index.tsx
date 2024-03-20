@@ -126,8 +126,7 @@ const styles = StyleSheet.create({
     },
 
     buttonEnvironment: {
-        position: 'absolute',
-        bottom:0,
+        
         flexDirection: 'row',
         width: 325,
         height: 56,
@@ -140,10 +139,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#33D49D', // Eğer --brand-primary-base varsa, onu kullanır, yoksa varsayılan renk #33D49D olur
         marginVertical: 10, // Yatay aralık
         flexShrink: 0,
+       
     },
 
     sendCode:{
-     color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
+    color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
     textAlign: 'center',
     fontFamily: 'SF Pro Display',
     fontSize: 14,

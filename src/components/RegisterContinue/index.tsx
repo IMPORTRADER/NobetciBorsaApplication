@@ -56,9 +56,9 @@ function Index() {
         setInputAddress(text);
     };
 
-    const navigateButtton = (email: string, password: string) => {
+    const navigateButtton = () => {
         navigate('registerContinue')
-        console.log("Email: " + email + " Password: " + password)
+        console.log("Name: " + inputName )
     }
 
     const dismissKeyboard = () => {
@@ -126,7 +126,7 @@ function Index() {
                     <TouchableOpacity
                         style={[styles.container, styles.button]}
                         onPress={() =>
-                            navigateButtton(inputName,inputLastName)
+                            navigateButtton()
                         }>
                         <Text style={styles.buttonText}>Devam Et</Text>
                     </TouchableOpacity>

@@ -27,9 +27,9 @@ function Index() {
     };
 
     const navigateButtton = (email: string, password: string) => {
-        navigate('registerContinue')
-        console.log("Email: " + email + " Password: " + password)
-    }
+        navigate('registerContinue');
+        console.log("Email: " + email + " Password: " + password);
+    };
 
     const dismissKeyboard = () => {
         Keyboard.dismiss();

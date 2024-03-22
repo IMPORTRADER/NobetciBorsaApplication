@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 
-function index() {
+function Index() {
 
   const [searchText, setSearchText] = useState('');
 
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   selectText: {
     color: '#2D3748', // Varsayılan renk
     textAlign: 'center',
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 18,
     fontWeight: '700',
     lineHeight: 25.2,
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
 
   },
   stockName:{
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 14,
     fontWeight: '700',
     lineHeight: 19.6,
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     color: '#1A202C', // Varsayılan renk
   },
   content:{
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 10,
     fontWeight: '500',
     textAlign: 'center',
@@ -249,4 +249,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default index
+export default Index

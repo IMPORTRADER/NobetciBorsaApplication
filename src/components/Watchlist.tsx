@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
 
     barText: {
         color: '#2D3748', // var(--grayscale-gray-800, #2D3748) içeriğini doğrudan yerine koyduk
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 18,
         fontStyle: 'normal',
         fontWeight: '700',
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     },
     stockCode: {
         color: '#2D3748', // var(--grayscale-gray-800, #2D3748) içeriğini doğrudan yerine koyduk
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 14,
         fontStyle: 'normal',
         fontWeight: '700',
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     },
     stockName: {
         color: '#A0AEC0', // var(--grayscale-gray-600, #A0AEC0) içeriğini doğrudan yerine koyduk
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 12,
         fontStyle: 'normal',
         fontWeight: '400',
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
 
     },
     price: {
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 14,
         fontStyle: 'normal',
         fontWeight: '700',
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
         paddingTop: 6,
     },
     change: {
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 12,
         fontStyle: 'normal',
         fontWeight: '500',

@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 
   bannerText: {
     color: '#1A202C',
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 20,
     fontStyle: 'normal',
     fontWeight: '700',
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
   degisim: {
     color: '#E2E8F0', // var(--grayscale-gray-400, #E2E8F0) içeriğini doğrudan yerine koyduk
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 14,
     fontStyle: 'normal',
     fontWeight: '400',
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   miktar: {
     color: '#FFF', // var(--others-white, #FFF) içeriğini doğrudan yerine koyduk
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 32,
     fontStyle: 'normal',
     fontWeight: '600',
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
   miktarText: {
     color: '#E2E8F0', // var(--grayscale-gray-400, #E2E8F0) içeriğini doğrudan yerine koyduk
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 12,
     fontStyle: 'normal',
     fontWeight: '500',
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   hisseAdet: {
     color: '#FFF', // var(--others-white, #FFF) içeriğini doğrudan yerine koyduk
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 12,
     fontStyle: 'normal',
     fontWeight: '700',

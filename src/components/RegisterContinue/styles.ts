@@ -8,9 +8,9 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     logo:{
-      width:417,
-      height:181,
-      resizeMode: 'stretch'
+        width:417,
+        height:181,
+        resizeMode: 'stretch'
     },
     textMain:{
         fontWeight: 'bold',
@@ -35,12 +35,19 @@ const styles = StyleSheet.create({
         width: '100%',
 
     },
+    inputMultiline:{
+        height: 70,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: '#E2E8F0', // Gri renk
+        paddingHorizontal: 10,
+        width: '100%',
+    },
     container: {
         flexDirection: 'row',
         width: 325,
         height: 56,
         paddingVertical: 8,
-        paddingHorizontal: 16,
         alignItems: 'center',
         justifyContent: 'space-between',
         marginTop:16
@@ -87,6 +94,54 @@ const styles = StyleSheet.create({
         borderColor: '#E2E8F0',
         paddingVertical: 10,
         paddingHorizontal: 20,
+    },
+
+    radioButtonRight: {
+        paddingVertical: 12,
+        paddingHorizontal: 16,
+        borderRadius: 16,
+        borderBottomLeftRadius:0,
+        borderTopLeftRadius:0,
+        marginVertical: 8,
+        borderWidth: 1,
+        borderLeftWidth: 0,
+        borderColor: '#E2E8F0',
+        backgroundColor: '#ffffff',
+        alignItems: 'center',
+        marginRight:-15,
+        width: 170,
+    },
+    radioButtonLeft: {
+        paddingVertical: 12,
+        paddingHorizontal: 16,
+        borderRadius: 16,
+        borderBottomRightRadius:0,
+        borderTopRightRadius:0,
+        marginVertical: 8,
+        borderWidth: 1,
+        borderRightWidth: 0,
+        borderColor: '#E2E8F0',
+        backgroundColor: '#ffffff',
+        alignItems: 'center',
+        marginRight:-15,
+        width: 170,
+    },
+    radioButtonText: {
+        fontSize: 14,
+        color: '#A0AEC0',
+    },
+    radioContainer:{
+        flexDirection:'row',
+        alignItems:'center',
+        marginTop:8,
+    },
+    radioButtonSelected: {
+        backgroundColor: '#fff',
+        shadowColor: '#000',
+    },
+    radioButtonTextSelected: {
+        color: '#33D49D',
+        fontWeight: 'bold',
     },
 
 

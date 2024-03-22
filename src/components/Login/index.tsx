@@ -27,7 +27,7 @@ function Index() {
     };
 
     const navigateButtton = () => {
-        navigate('root');
+        navigate('hello');
         console.log("Email: " + inputText + " Password: " + inputPass);
     };
 

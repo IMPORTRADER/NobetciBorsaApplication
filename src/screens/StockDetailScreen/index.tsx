@@ -16,7 +16,7 @@ const index = () => {
                <View style={styles.stockNameInfo}>
                 <View>
                     <Text style={styles.stockCode}>ARTMS</Text>
-                    <Text style={styles.stockName} >ARTEMİS HALI</Text>
+                    <Text style={styles.stockName} >ARTEMİSS HALI</Text>
                 </View>
                 <TouchableOpacity>
                     <Feather name="trash-2" size={24} color="black" />

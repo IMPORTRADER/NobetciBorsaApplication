@@ -57,7 +57,7 @@ function Index() {
     };
 
     const navigateButtton = () => {
-        navigate('registerContinue')
+        navigate('login')
         console.log("Name: " + inputName )
     }
 

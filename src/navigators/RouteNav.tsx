@@ -7,6 +7,8 @@ import OnboardingScreen from "../screens/OnboardingScreen";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import RegisterContinueScreen from "../screens/RegisterContinueScreen";
+import HelloScreen from "../screens/HelloScreen";
+import helloScreen from "../screens/HelloScreen";
 
 
 
@@ -25,6 +27,7 @@ function HomeNavigator() {
         <Stack.Screen name="login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="register" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="registerContinue" component={RegisterContinueScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="hello" component={helloScreen} options={{ headerShown: false }} />
 
     </Stack.Navigator>
   )

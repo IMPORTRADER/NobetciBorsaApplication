@@ -126,7 +126,8 @@ const styles = StyleSheet.create({
     },
 
     buttonEnvironment: {
-        
+        position: 'absolute',
+        bottom: 0,
         flexDirection: 'row',
         width: 325,
         height: 56,

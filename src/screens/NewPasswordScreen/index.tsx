@@ -13,7 +13,7 @@ const index = () => {
   };
 
   const newPass = () => {
-    navigation.navigate('home');
+    navigation.navigate('root');
   };
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');

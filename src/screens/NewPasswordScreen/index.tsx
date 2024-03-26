@@ -1,19 +1,20 @@
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
 import React, { useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import {ParamListBase, useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from "@react-navigation/stack";
 
 
-const index = () => {
+const Index = () => {
 
-  const navigation = useNavigation();
+  const {navigate, goBack} = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const geriGit = () => {
-    navigation.goBack();
+    goBack();
   };
 
   const newPass = () => {
-    navigation.navigate('root');
+    navigate('root');
   };
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -66,7 +67,7 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
 
 const styles = StyleSheet.create({
   container: {
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
 
   headerText: {
     color: '#2D3748', // Eğer --grayscale-gray-800 varsa, onu kullanır, yoksa varsayılan renk #2D3748 olur
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 20,
     fontStyle: 'normal',
     fontWeight: '700',
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
     color: '#A0AEC0', // Eğer --grayscale-gray-600 varsa, onu kullanır, yoksa varsayılan renk #A0AEC0 olur
     textAlign: 'center',
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 14,
     fontStyle: 'normal',
     fontWeight: '400',
@@ -177,7 +178,7 @@ const styles = StyleSheet.create({
   sendCode: {
     color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
     textAlign: 'center',
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 14,
     fontStyle: 'normal',
     fontWeight: '700',

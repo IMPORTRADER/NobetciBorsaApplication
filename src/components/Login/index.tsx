@@ -27,8 +27,12 @@ function Index() {
     };
 
     const navigateButtton = () => {
-        navigate('hello');
+        navigate('emailconfirmation');
         console.log("Email: " + inputText + " Password: " + inputPass);
+    };
+
+    const navigateToForgotPassword = () => {
+        navigate('forgotpassword');
     };
 
     const dismissKeyboard = () => {
@@ -80,7 +84,7 @@ function Index() {
                         <Text style={styles.buttonText}>Devam Et</Text>
                     </TouchableOpacity>
                     <View style={{ flexDirection: 'row', alignItems: 'baseline',marginTop:5 }}>
-                        <TouchableOpacity onPress={() => console.log("Şifreni mi unuttun")}>
+                        <TouchableOpacity onPress={() => navigateToForgotPassword()}>
                             <Text style={{ color: '#33D49D', fontSize:16, marginTop:24}}>Şifreni mi unuttun?</Text>
                         </TouchableOpacity>
                     </View>

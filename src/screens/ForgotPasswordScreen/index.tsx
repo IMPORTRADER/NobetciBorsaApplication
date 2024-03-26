@@ -1,52 +1,57 @@
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, SafeAreaView } from 'react-native'
-import React from 'react'
+import {
+    StyleSheet,
+    Text,
+    View,
+    TouchableOpacity,
+    TextInput,
+    SafeAreaView,
+    TouchableWithoutFeedback,
+    Keyboard, KeyboardAvoidingView,
+} from 'react-native';
+import React from 'react';
 import { AntDesign } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-import ForgotPasswordValidationScreen from '../ForgotPasswordValidationScreen';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-const index = () => {
+const Index = () => {
 
-    const navigation = useNavigation();
+    const { navigate, goBack } = useNavigation<StackNavigationProp<ParamListBase>>();
 
     const geriGit = () => {
-        navigation.goBack();
+        goBack();
     };
 
     const enterCode = () => {
-        navigation.navigate('forgotpasswordvalidation');
+        navigate('forgotpasswordvalidation');
     };
 
-    
-
     return (
+        <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <SafeAreaView style={styles.container}>
+                    <View style={styles.selectContainer}>
+                        <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
+                            <AntDesign name="left" size={24} color="black" />
+                        </TouchableOpacity>
+                    </View>
 
+                    <View style={styles.textContainer}>
+                        <Text style={styles.headerText}>Şifremi unuttum</Text>
+                        <Text style={styles.headerContent}>Lütfen doğrulanmış Email adresinizi girin, size bir kod göndereceğiz.</Text>
+                    </View>
 
-        <SafeAreaView style={styles.container} >
-            <View style={styles.selectContainer}>
-                <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
-                    <AntDesign name="left" size={24} color="black" />
-                </TouchableOpacity>
+                    <TextInput style={styles.input} placeholder="Email" />
 
-
-            </View>
-
-            <View style={styles.textContainer} >
-                <Text style={styles.headerText} >Şifremi unuttum</Text>
-                <Text style={styles.headerContent} >Lütfen doğrulanmış Email adresinizi girin, size bir kod göndereceğiz.</Text>
-            </View>
-
-            <TextInput style={styles.input} placeholder="Email" >
-                
-            </TextInput>
-
-            <TouchableOpacity onPress={enterCode} style={styles.buttonEnvironment} >
-                <Text style={styles.sendCode} >Kodu Gönder</Text>
-            </TouchableOpacity>
-        </SafeAreaView>
+                    <TouchableOpacity onPress={enterCode} style={styles.buttonEnvironment}>
+                        <Text style={styles.sendCode}>Kodu Gönder</Text>
+                    </TouchableOpacity>
+                </SafeAreaView>
+            </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
     )
 }
 
-export default index
+export default Index;
 
 const styles = StyleSheet.create({
     container: {
@@ -57,16 +62,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
 
     },
+
     selectContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
         justifyContent: 'flex-start',
         paddingLeft: 25,
-  
         height: 48,
-
-
     },
 
     buttonContainer: {
@@ -91,7 +94,7 @@ const styles = StyleSheet.create({
 
     headerText: {
         color: '#2D3748', // Eğer --grayscale-gray-800 varsa, onu kullanır, yoksa varsayılan renk #2D3748 olur
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 20,
         fontStyle: 'normal',
         fontWeight: '700',
@@ -102,7 +105,7 @@ const styles = StyleSheet.create({
         marginTop: 12,
         color: '#A0AEC0', // Eğer --grayscale-gray-600 varsa, onu kullanır, yoksa varsayılan renk #A0AEC0 olur
         textAlign: 'center',
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 14,
         fontStyle: 'normal',
         fontWeight: '400',
@@ -146,7 +149,7 @@ const styles = StyleSheet.create({
     sendCode:{
     color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
     textAlign: 'center',
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 14,
     fontStyle: 'normal',
     fontWeight: '700',

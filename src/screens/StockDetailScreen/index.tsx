@@ -3,7 +3,7 @@ import { AntDesign } from '@expo/vector-icons';
 import React from 'react'
 import { Feather } from '@expo/vector-icons';
 
-const index = () => {
+const Index = () => {
     return (
         <View style={styles.container}>
             <View style={styles.navbar}>
@@ -61,7 +61,7 @@ const index = () => {
     )
 }
 
-export default index
+export default Index
 
 const styles = StyleSheet.create({
     container: {
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         marginLeft: 59,
         color: '#2D3748',
         textAlign: 'center',
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 18,
         fontWeight: '700',
         lineHeight: 25.2,
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     price:{
         color: '#2D3748',
         textAlign: 'right',
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 18,
         fontWeight: '700',
         lineHeight: 25.2,
@@ -146,14 +146,14 @@ const styles = StyleSheet.create({
     priceName:{
         color: '#A0AEC0',
         textAlign: 'left',
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 12,
         fontWeight: '500',
         letterSpacing: 0.2,
     },
     stockCode:{
         color: '#2D3748',
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 14,
         fontWeight: '700',
         lineHeight: 19.6,
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     },
     stockName:{
         color: '#A0AEC0',
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 12,
         fontWeight: '400',
         lineHeight: 12, // Burada normal satır yüksekliği olduğunu belirtiyorum. İstenirse düzenlenebilir.
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     },
     change:{
         color: '#33D49D', // --alert-success-base renk değeri
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 12,
         fontWeight: '500',
         lineHeight: 12, // normal satır yüksekliği

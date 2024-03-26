@@ -31,6 +31,10 @@ function Index() {
         console.log("Email: " + email + " Password: " + password);
     };
 
+    const navigateToLogin = () => {
+        navigate('login');
+    };
+
     const dismissKeyboard = () => {
         Keyboard.dismiss();
     };
@@ -111,7 +115,7 @@ function Index() {
                     </View>
                     <View style={{ flexDirection: 'row', alignItems: 'baseline',marginTop:5 }}>
                         <Text style={{fontSize:16}}>Zaten hesabınız var mı? </Text>
-                        <TouchableOpacity onPress={() => console.log("Giriş yap")}>
+                        <TouchableOpacity onPress={() => navigateToLogin()}>
                             <Text style={{ color: '#33D49D', fontSize:16}}>Giriş yap</Text>
                         </TouchableOpacity>
                     </View>

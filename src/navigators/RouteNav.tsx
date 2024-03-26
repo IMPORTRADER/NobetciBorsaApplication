@@ -13,12 +13,15 @@ import StockDetailScreen from "../screens/StockDetailScreen";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import ForgotPasswordValidationScreen from "../screens/ForgotPasswordValidationScreen";
 import NewPasswordScreen from "../screens/NewPasswordScreen";
-
+import  UserScreen from '../screens/UserScreen'
+import AccountScreen from '../screens/AccountScreen'
+import LanguageScreen from '../screens/LanguageScreen'
+import SettingsScreen from '../screens/SettingsScreen'
 function HomeNavigator() {
 
   const Stack = createStackNavigator()
   return (
-    <Stack.Navigator initialRouteName='forgotpassword' screenOptions={{
+    <Stack.Navigator initialRouteName='root' screenOptions={{
         headerStyle: { elevation: 0 },
         cardStyle: { backgroundColor: '#fff' }
     }}>
@@ -34,6 +37,12 @@ function HomeNavigator() {
         <Stack.Screen name="forgotpassword" component={ForgotPasswordScreen} options={{ headerShown: false }} />
         <Stack.Screen name="forgotpasswordvalidation" component={ForgotPasswordValidationScreen} options={{ headerShown: false }} />
         <Stack.Screen name="newpassword" component={NewPasswordScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="user" component={UserScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="account" component={AccountScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="language" component={LanguageScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="settings" component={SettingsScreen} options={{ headerShown: false }} />
+
+
 
 
     </Stack.Navigator>

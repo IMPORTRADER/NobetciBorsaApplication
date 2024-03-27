@@ -3,42 +3,39 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import {ParamListBase, useNavigation} from '@react-navigation/native';
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import {StackNavigationProp} from "@react-navigation/stack";
 
+const Index = () => {
 
-
-
-
-const index = () => {
-
-  const navigation = useNavigation();
+  const {navigate, goBack} = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const geriGit = () => {
-    navigation.goBack();
+    goBack();
   };
 
   const newPass = () => {
-    navigation.navigate('root');
+    navigate('root');
   };
 
   const account = () =>{
-    navigation.navigate('account');
+    navigate('account');
   };
   const language = () =>{
-    navigation.navigate('language');
+    navigate('language');
   };
   const settings = () =>{
-    navigation.navigate('settings');
+    navigate('settings');
   };
 
   return (
     <SafeAreaView style={styles.container} >
       <View style={styles.navbar}>
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
           <AntDesign name="left" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.navbarText}>Profil</Text>
@@ -127,7 +124,7 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
 
 const styles = StyleSheet.create({
 
@@ -222,7 +219,7 @@ const styles = StyleSheet.create({
   sendCode: {
     color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
     textAlign: 'center',
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 14,
     fontStyle: 'normal',
     fontWeight: '700',

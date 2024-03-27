@@ -60,7 +60,7 @@ const index = () => {
       <ScrollView >
         <View style={styles.accountItem}>
           <View style={styles.imageContainer} >
-            <Image style={{ width: 90, height: 90, }} source={require('../../../assets/userphoto/memoji.png')} />
+            <Image style={{ width: 90, height: 90, }} source={require('../../../assets/userphoto/memo.png')} />
             <TouchableOpacity style={styles.changePhoto}>
               <Feather name="camera" size={16} color="white" />
             </TouchableOpacity>

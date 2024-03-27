@@ -1,11 +1,26 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
-import React from 'react'
+import React, { useState } from 'react'
 import { Feather } from '@expo/vector-icons';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 const Index = () => {
+
+    const [active, setActive] = useState(true);
+    const [deActive, setdeActive] = useState(false);
+
+    const handleActive = () => {
+        setActive(true);
+        setdeActive(false);
+    };
+
+    const handledeActive = () => {
+        setActive(false);
+        setdeActive(true);
+    };
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <View style={styles.navbar}>
                 <TouchableOpacity style={styles.buttonContainer}>
                     <AntDesign name="left" size={24} color="black" />
@@ -13,51 +28,67 @@ const Index = () => {
                 <Text style={styles.navbarText}>Hisse Detayları</Text>
             </View>
             <View style={styles.cardContainer} >
-               <View style={styles.stockNameInfo}>
-                <View>
-                    <Text style={styles.stockCode}>ARTMS</Text>
-                    <Text style={styles.stockName} >ARTEMİSS HALI</Text>
+                <View style={styles.stockNameInfo}>
+                    <View>
+                        <Text style={styles.stockCode}>ARTMS</Text>
+                        <Text style={styles.stockName} >ARTEMİSS HALI</Text>
+                    </View>
+                    <TouchableOpacity>
+                        <Feather name="trash-2" size={24} color="black" />
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity>
-                    <Feather name="trash-2" size={24} color="black" />
-                </TouchableOpacity>
-               </View>
-               <View style={styles.priceState} >
-                <View>
-                    <Text style={styles.price} >{'\u20BA'}33,720</Text>
-                    <Text style={styles.change} >+0.81%</Text>
+                <View style={styles.priceState} >
+                    <View>
+                        <Text style={styles.price} >{'\u20BA'}33,720</Text>
+                        <Text style={styles.change} >+0.81%</Text>
+                    </View>
+                    <View style={styles.priceContainer} >
+                        <Text style={styles.price} >{'\u20BA'}36,980</Text>
+                        <Text style={styles.priceName}>Tavan Fiyatı</Text>
+
+                    </View>
                 </View>
-                <View style={styles.priceContainer} >
-                    <Text style={styles.price} >{'\u20BA'}36,980</Text>
-                    <Text style={styles.priceName}>Tavan Fiyatı</Text>
+                <View style={styles.priceState}>
+                    <View>
+                        <Text style={styles.price} >Hareketli</Text>
+                        <Text style={styles.priceName} >Durum</Text>
+                    </View>
+                    <View>
+                        <Text style={styles.price} >{'\u20BA'}30,180</Text>
+                        <Text style={styles.priceName} >Taban Fiyatı</Text>
+                    </View>
 
                 </View>
-               </View>
-               <View style={styles.priceState}>
-                <View>
-                    <Text style={styles.price} >Hareketli</Text>
-                    <Text style={styles.priceName} >Durum</Text>
-                </View>
-                <View>
-                    <Text style={styles.price} >{'\u20BA'}30,180</Text>
-                    <Text style={styles.priceName} >Taban Fiyatı</Text>
-                </View>
-
-               </View>
             </View>
             <View style={styles.chartContainer} >
                 <Image source={require('../../../assets/chart.png')} />
             </View>
             <View style={styles.infoBar} >
-                <View style={styles.selectMode} >
-                    <TouchableOpacity><Text>Derinlik Bilgisi</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.active} ><Text>Detaylar</Text></TouchableOpacity>
-
+                <View style={styles.changeSex} >
+                    <TouchableOpacity
+                        style={[styles.notChanged, active ? styles.onChanged : null]}
+                        onPress={handleActive}
+                    >
+                        <Text style={[styles.notChangedText, active ? styles.onChangedText : null]}>Derinlik Bilgisi</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={[styles.notChanged, deActive ? styles.onChanged : null]}
+                        onPress={handledeActive}
+                    >
+                        <Text style={[styles.notChangedText, deActive ? styles.onChangedText : null]}>Detaylar</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
-            <View></View>
+            <View style={{ justifyContent: 'center', alignItems: 'center' }} >
+                <Text style={styles.listText} >Takip Listem</Text>
+                
 
-        </View>
+            </View>
+            <TouchableOpacity style={styles.buttonEnvironment} >
+                <Text style={styles.sendCode} >Takip Listeme Ekle</Text>
+            </TouchableOpacity>
+
+        </SafeAreaView>
     )
 }
 
@@ -68,11 +99,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         justifyContent: 'flex-start',
-        margin:0,
-        padding:0,
+
     },
     navbar: {
-        marginTop: 65,
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -102,39 +131,39 @@ const styles = StyleSheet.create({
     },
 
     cardContainer: {
-        flexDirection:'column',
-        alignItems:'center',
-        justifyContent:'center',
-        width:'90%',
-        marginHorizontal:25,
-        paddingHorizontal:25,
-        paddingTop:20,
-        marginVertical:25,
-        borderRadius:25,
-        backgroundColor:'#FAFAFA',
-      
-    
-        
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '90%',
+        marginHorizontal: 25,
+        paddingHorizontal: 25,
+        paddingTop: 20,
+        marginVertical: 25,
+        borderRadius: 25,
+        backgroundColor: '#FAFAFA',
+
+
+
     },
-    stockNameInfo:{
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'space-between',
-        width:'100%',
+    stockNameInfo: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '100%',
     },
-    priceState:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        width:'100%',
-        paddingVertical:10,
+    priceState: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+        paddingVertical: 10,
     },
-    priceContainer:{
-        flexDirection:'column',
-        alignItems:'flex-end',
-        
+    priceContainer: {
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+
     },
-    price:{
+    price: {
         color: '#2D3748',
         textAlign: 'right',
         fontFamily: 'System',
@@ -143,7 +172,7 @@ const styles = StyleSheet.create({
         lineHeight: 25.2,
         letterSpacing: 0.2,
     },
-    priceName:{
+    priceName: {
         color: '#A0AEC0',
         textAlign: 'left',
         fontFamily: 'System',
@@ -151,7 +180,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         letterSpacing: 0.2,
     },
-    stockCode:{
+    stockCode: {
         color: '#2D3748',
         fontFamily: 'System',
         fontSize: 14,
@@ -159,7 +188,7 @@ const styles = StyleSheet.create({
         lineHeight: 19.6,
         letterSpacing: 0.2,
     },
-    stockName:{
+    stockName: {
         color: '#A0AEC0',
         fontFamily: 'System',
         fontSize: 12,
@@ -168,7 +197,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
 
     },
-    change:{
+    change: {
         color: '#33D49D', // --alert-success-base renk değeri
         fontFamily: 'System',
         fontSize: 12,
@@ -176,33 +205,33 @@ const styles = StyleSheet.create({
         lineHeight: 12, // normal satır yüksekliği
         letterSpacing: 0.2,
     },
-    chartContainer:{
-        width:'100%',
+    chartContainer: {
+        width: '100%',
     },
-    infoBar:{
-      
-        backgroundColor:'white',
-        marginHorizontal:25,
-        paddingVertical:8,
-        paddingHorizontal:12,
-        alignItems:'center',
-        justifyContent:'center',
-        marginTop:37,
-        marginBottom:24,
-     
-    },
-    selectMode:{
-        backgroundColor:'#FAFAFA',
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'center',
-        width:'100%',
-        borderRadius:16,
-        paddingVertical:8,
+    infoBar: {
+
+        backgroundColor: 'white',
+
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 37,
+        marginBottom: 24,
 
     },
-    active:{
-      
+    selectMode: {
+        backgroundColor: '#FAFAFA',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        borderRadius: 16,
+        paddingVertical: 8,
+
+    },
+    active: {
+
         display: 'flex',
         height: 40,
         padding: 4,
@@ -210,10 +239,100 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row', // Yatay yönde hizalama için
         marginHorizontal: 10, // Eğer gap özelliği gibi boşluk eklemek istiyorsanız, margin kullanabilirsiniz.
-        width:'68%',
+        width: '68%',
         borderRadius: 12,
         backgroundColor: '#FFF', // --others-white renk değeri
         shadowColor: '#717C96', // Kutu gölgesi için
-        
-    }
+
+    },
+
+    changeSex: {
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        height: 50,
+        flexDirection: 'row',
+        width: '87%',
+        borderRadius: 16,
+        marginTop: 22,
+        overflow: 'hidden',
+        backgroundColor: '#FAFAFA',
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+
+    },
+
+    onChanged: {
+        borderRadius: 16,
+        backgroundColor: '#FFFFFF',
+        width: '50%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    onChangedText: {
+        color: '#33D49D',
+        letterSpacing: 0.2,
+        fontWeight: '700',
+        fontSize: 14,
+        lineHeight: 19.6
+    },
+    notChangedText: {
+        color: '#A0AEC0',
+        letterSpacing: 0.2,
+        fontWeight: '500',
+        fontSize: 14,
+        lineHeight: 19.6
+    },
+    notChanged: {
+        padding: 8,
+        width: '50%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    buttonEnvironment: {
+        alignSelf: 'center',
+        position: 'absolute',
+        bottom: 0,
+        flexDirection: 'row',
+        width: 325,
+        height: 56,
+        marginBottom: 36,
+        paddingVertical: 8,
+        paddingHorizontal: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 16,
+        backgroundColor: '#33D49D', // Eğer --brand-primary-base varsa, onu kullanır, yoksa varsayılan renk #33D49D olur
+        marginVertical: 10, // Yatay aralık
+        flexShrink: 0,
+
+    },
+
+    sendCode: {
+        color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
+        textAlign: 'center',
+        fontFamily: 'SF Pro Display',
+        fontSize: 14,
+        fontStyle: 'normal',
+        fontWeight: '700',
+        lineHeight: 19.6, // Burada line-height değerini piksel olarak belirtmek gerekir
+        letterSpacing: 0.2,
+    },
+
+    listText: {
+        color: '#2D3748',
+        alignSelf: 'flex-start',
+        marginLeft: 25,
+        fontWeight: '700',
+        lineHeight: 21.6,
+        letterSpacing: 0.2,
+        fontSize: 18,
+
+    },
+
+    watchlist: {
+        width: '100%',
+        backgroundColor: 'red',
+    },
 })

@@ -47,7 +47,7 @@ const index = () => {
       <View style={styles.userContainer}>
 
         <View style={styles.userHeader}>
-          <Image style={{ width: 50, height: 50, }} source={require('../../../assets/userphoto/memoji.png')} />
+          <Image style={{ width: 50, height: 50, }} source={require('../../../assets/userphoto/memo.png')} />
         </View>
         <View style={styles.infoContainer} >
           <Text style={styles.userName} >Canberk Soysal</Text>

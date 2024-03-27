@@ -14,25 +14,7 @@ const Index: React.FC = () => {
     goBack();
   };
 
-  const [inputValue1, setInputValue1] = useState<string>('');
-  const [inputValue2, setInputValue2] = useState<string>('');
-  const [inputValue3, setInputValue3] = useState<string>('');
-  const [inputValue4, setInputValue4] = useState<string>('');
-
-  const handleChangeText1 = (text: string) => {
-    setInputValue1(text);
-  };
-
-  const handleChangeText2 = (text: string) => {
-    setInputValue2(text);
-  };
-
-  const handleChangeText3 = (text: string) => {
-    setInputValue3(text);
-  };
-  const handleChangeText4 = (text: string) => {
-    setInputValue4(text);
-  };
+  
 
   const [maleChanged, setMaleChanged] = useState(true);
   const [femaleChanged, setFemaleChanged] = useState(false);
@@ -55,7 +37,7 @@ const Index: React.FC = () => {
         <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
           <AntDesign name="left" size={24} color="black" />
         </TouchableOpacity>
-        <Text style={styles.navbarText}>Profil</Text>
+        <Text style={styles.navbarText}>Hesabım</Text>
       </View>
 
       <ScrollView >
@@ -71,40 +53,24 @@ const Index: React.FC = () => {
           <View style={styles.infoContainer}>
             <View style={{ gap: 12, }} >
               <Text style={styles.infoText} >İsim</Text>
-              <View style={styles.inputContainer}>
+              <TextInput placeholder="Canberk" style={styles.inputContainer}>
 
-                <TextInput
-                  style={[inputValue1 !== '' && styles.inputWithValue]} // inputValue boş değilse farklı bir stil uygula
-                  placeholder="Canberk"
-                  onChangeText={handleChangeText1}
-                  value={inputValue1}
-                />
-              </View>
+                
+              </TextInput>
             </View>
             <View style={{ gap: 12, }} >
               <Text style={styles.infoText} >Soyisim</Text>
-              <View style={styles.inputContainer}>
+              <TextInput placeholder="Soysal" style={styles.inputContainer}>
 
-                <TextInput
-                  style={[inputValue2 !== '' && styles.inputWithValue]} // inputValue boş değilse farklı bir stil uygula
-                  placeholder="Canberk"
-                  onChangeText={handleChangeText2}
-                  value={inputValue2}
-
-                />
-              </View>
+                
+              </TextInput>
             </View>
             <View style={{ gap: 12, }} >
               <Text style={styles.infoText} >Email</Text>
-              <View style={styles.inputContainer}>
+              <TextInput placeholder="canberksoysal@gmail.com" style={styles.inputContainer}>
 
-                <TextInput
-                  style={[inputValue3 !== '' && styles.inputWithValue]} // inputValue boş değilse farklı bir stil uygula
-                  placeholder="canberksoysal@gmail.com"
-                  onChangeText={handleChangeText3}
-                  value={inputValue3}
-                />
-              </View>
+                
+              </TextInput>
             </View>
 
 
@@ -129,15 +95,10 @@ const Index: React.FC = () => {
           <View style={{ width: '100%', paddingVertical: 29, paddingHorizontal: 25, }} >
             <View style={{ gap: 12, }} >
               <Text style={styles.infoText} >Adres</Text>
-              <View style={styles.inputContainer}>
+              <TextInput placeholder="fjasdfjsadfjasdfjasdfjas" style={styles.inputContainer}>
 
-                <TextInput
-                  style={[inputValue4 !== '' && styles.inputWithValue]} // inputValue boş değilse farklı bir stil uygula
-                  placeholder="fjasdfjsadfjasdfjasdfjas"
-                  onChangeText={handleChangeText4}
-                  value={inputValue4}
-                />
-              </View>
+                
+              </TextInput>
             </View>
           </View>
 
@@ -180,7 +141,7 @@ const styles = StyleSheet.create({
     borderColor: '#EDF2F7'
   },
   navbarText: {
-    marginLeft: 100,
+    marginLeft: 95,
     color: '#2D3748',
     textAlign: 'center',
     fontSize: 18,
@@ -236,7 +197,12 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     height: 56,
     justifyContent: 'center',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 0.2,
+    lineHeight: 19.6,
+    color: '#1A202C',
   },
   infoText: {
     color: '#718096',
@@ -260,6 +226,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     lineHeight: 19.6,
     color: '#1A202C',
+    
   },
 
   changeSex: {

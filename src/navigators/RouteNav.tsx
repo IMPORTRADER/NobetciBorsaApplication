@@ -23,7 +23,7 @@ function HomeNavigator() {
 
   const Stack = createStackNavigator()
   return (
-    <Stack.Navigator initialRouteName='settings' screenOptions={{
+    <Stack.Navigator initialRouteName='onboarding' screenOptions={{
         headerStyle: { elevation: 0 },
         cardStyle: { backgroundColor: '#fff' }
     }}>

@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, ParamListBase } from '@react-navigation/native';
+import {StackNavigationProp} from "@react-navigation/stack";
 
 
 
@@ -12,8 +13,10 @@ const index = () => {
 
   const navigation = useNavigation();
 
+  const {goBack} = useNavigation<StackNavigationProp<ParamListBase>>();
+
   const geriGit = () => {
-    navigation.goBack();
+    goBack();
   };
   const [isEnabled, setIsEnabled] = useState(false);
 
@@ -23,7 +26,7 @@ const index = () => {
   return (
     <SafeAreaView style={styles.container} >
       <View style={styles.navbar}>
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity onPress={goBack} style={styles.buttonContainer}>
           <AntDesign name="left" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.navbarText}>Ayarlar</Text>
@@ -89,7 +92,7 @@ const index = () => {
   )
 }
 
-export default Index
+export default index
 
 const styles = StyleSheet.create({
 

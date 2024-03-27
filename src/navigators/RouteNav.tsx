@@ -18,10 +18,10 @@ import LanguageScreen from "../screens/LanguageScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 
 function HomeNavigator() {
-  
+
   const Stack = createStackNavigator()
   return (
-    <Stack.Navigator initialRouteName='forgotpassword' screenOptions={{
+    <Stack.Navigator initialRouteName='onboarding' screenOptions={{
         headerStyle: { elevation: 0 },
         cardStyle: { backgroundColor: '#fff' }
     }}>

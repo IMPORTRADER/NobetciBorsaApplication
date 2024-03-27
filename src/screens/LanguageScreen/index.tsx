@@ -2,28 +2,29 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image } from 'reac
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { AntDesign } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import {ParamListBase, useNavigation} from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {StackNavigationProp} from "@react-navigation/stack";
 
 
 
-const index = () => {
+const Index = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
 
 
 
-  const navigation = useNavigation();
+  const {goBack} = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const geriGit = () => {
-    navigation.goBack();
+    goBack();
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.navbar}>
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
           <AntDesign name="left" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.navbarText}>Dil</Text>
@@ -105,7 +106,7 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
 
 const styles = StyleSheet.create({
 
@@ -199,7 +200,7 @@ const styles = StyleSheet.create({
   sendCode: {
     color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
     textAlign: 'center',
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 14,
     fontStyle: 'normal',
     fontWeight: '700',

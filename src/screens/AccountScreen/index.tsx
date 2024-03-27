@@ -1,35 +1,36 @@
 import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView, TouchableOpacity, TextInput } from 'react-native'
 import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import {ParamListBase, useNavigation} from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import {StackNavigationProp} from "@react-navigation/stack";
 
 
-const index = () => {
+const Index: React.FC = () => {
 
-  const navigation = useNavigation();
+  const {goBack} = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const geriGit = () => {
-    navigation.goBack();
+    goBack();
   };
 
-  const [inputValue1, setInputValue1] = useState('');
-  const [inputValue2, setInputValue2] = useState('');
-  const [inputValue3, setInputValue3] = useState('');
-  const [inputValue4, setInputValue4] = useState('');
+  const [inputValue1, setInputValue1] = useState<string>('');
+  const [inputValue2, setInputValue2] = useState<string>('');
+  const [inputValue3, setInputValue3] = useState<string>('');
+  const [inputValue4, setInputValue4] = useState<string>('');
 
-  const handleChangeText1 = (text) => {
+  const handleChangeText1 = (text: string) => {
     setInputValue1(text);
   };
 
-  const handleChangeText2 = (text) => {
+  const handleChangeText2 = (text: string) => {
     setInputValue2(text);
   };
 
-  const handleChangeText3 = (text) => {
+  const handleChangeText3 = (text: string) => {
     setInputValue3(text);
   };
-  const handleChangeText4 = (text) => {
+  const handleChangeText4 = (text: string) => {
     setInputValue4(text);
   };
 
@@ -51,7 +52,7 @@ const index = () => {
   return (
     <SafeAreaView style={styles.container} >
       <View style={styles.navbar}>
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
           <AntDesign name="left" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.navbarText}>Profil</Text>
@@ -150,7 +151,7 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
 
 const styles = StyleSheet.create({
 
@@ -326,7 +327,7 @@ const styles = StyleSheet.create({
   sendCode: {
     color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
     textAlign: 'center',
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'System',
     fontSize: 14,
     fontStyle: 'normal',
     fontWeight: '700',

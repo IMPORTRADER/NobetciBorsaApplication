@@ -4,9 +4,7 @@ import EmailConfirmation from "../../components/EmailConfirmation";
 
 function Index() {
     return (
-        <View>
-            <EmailConfirmation/>
-        </View>
+        <EmailConfirmation/>
     );
 }
 

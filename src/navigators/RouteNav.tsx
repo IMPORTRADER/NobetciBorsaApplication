@@ -16,6 +16,8 @@ import NewPasswordScreen from "../screens/NewPasswordScreen";
 import AccountScreen from "../screens/AccountScreen";
 import LanguageScreen from "../screens/LanguageScreen";
 import SettingsScreen from "../screens/SettingsScreen";
+import EmailConfirmation from "../components/EmailConfirmation";
+import EmailConfirmationScreen from "../screens/EmailConfirmationScreen";
 
 function HomeNavigator() {
 
@@ -40,6 +42,7 @@ function HomeNavigator() {
         <Stack.Screen name="account" component={AccountScreen} options={{ headerShown: false }} />
         <Stack.Screen name="language" component={LanguageScreen} options={{ headerShown: false }} />
         <Stack.Screen name="settings" component={SettingsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="emailconfirmation" component={EmailConfirmationScreen} options={{ headerShown: false }} />
 
 
 

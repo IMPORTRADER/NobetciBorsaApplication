@@ -3,12 +3,16 @@ import { AntDesign } from '@expo/vector-icons';
 import React, { useState } from 'react'
 import { Feather } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import {ParamListBase, useNavigation} from "@react-navigation/native";
+import {StackNavigationProp} from "@react-navigation/stack";
 
 
 const Index = () => {
 
     const [active, setActive] = useState(true);
     const [deActive, setdeActive] = useState(false);
+    const {goBack} = useNavigation<StackNavigationProp<ParamListBase>>();
+
 
     const handleActive = () => {
         setActive(true);
@@ -19,10 +23,14 @@ const Index = () => {
         setActive(false);
         setdeActive(true);
     };
+
+    const geriGit = () => {
+        goBack();
+    }
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.navbar}>
-                <TouchableOpacity style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
                     <AntDesign name="left" size={24} color="black" />
                 </TouchableOpacity>
                 <Text style={styles.navbarText}>Hisse Detayları</Text>
@@ -312,7 +320,7 @@ const styles = StyleSheet.create({
     sendCode: {
         color: '#FFF', // Eğer --others-white varsa, onu kullanır, yoksa varsayılan renk #FFF olur
         textAlign: 'center',
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'System',
         fontSize: 14,
         fontStyle: 'normal',
         fontWeight: '700',

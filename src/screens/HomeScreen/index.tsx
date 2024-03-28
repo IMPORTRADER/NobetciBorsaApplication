@@ -27,14 +27,13 @@ function Index() {
 
         <View style={{flexDirection:'row',justifyContent:'space-between',width:'75%',}}>
           <Text style={styles.bannerText}>NöbetçiBorsa</Text>
-          <Feather name="bell" size={24} color="grey" style={{paddingTop:12}} />
         </View>
       </View>
 
       <View style={styles.portfolioCard}>
           <View style={styles.cardContainer}>
             <Text style={styles.degisim}>Toplam Değişim</Text>
-            <Text style={styles.miktar}>%31,31</Text>
+            <Text style={styles.miktar}>%0,81</Text>
             <View style={styles.stockContainer}>
               <View style={styles.stateContainer} >
                 <View style={{ width: 6, height: 6, backgroundColor: '#52FFC4', borderRadius: 3, marginRight: 4, marginTop: 4 }} ></View>

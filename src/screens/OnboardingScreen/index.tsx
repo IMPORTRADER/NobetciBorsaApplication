@@ -5,7 +5,7 @@ import { LogBox } from 'react-native';
 
 function Index() {
     const {width, height} = Dimensions.get("window");
-    LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+    LogBox.ignoreAllLogs();
     return (
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
             <Image

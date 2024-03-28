@@ -86,7 +86,7 @@ const Index = () => {
 
             onCodeFilled={
               (code) => {
-                console.log(`Code is ${code}, you are good to go!`)
+                newPass()
 
               }
             }
@@ -97,9 +97,9 @@ const Index = () => {
             <Text style={{ color: '#33D49D', fontSize: 14, fontWeight: '700', lineHeight: 19.6, letterSpacing: 0.2 }} >Kodu Tekrar Gönder</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonEnvironment} >
+          <TouchableOpacity style={styles.buttonEnvironment} onPress={newPass}>
 
-            <Text style={styles.sendCode} onPress={newPass} >Hesabımı Doğrula</Text>
+            <Text style={styles.sendCode} >Şifremi sıfırla</Text>
 
 
           </TouchableOpacity>

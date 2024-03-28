@@ -1,4 +1,13 @@
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+  TextInput,
+  Keyboard,
+  TouchableWithoutFeedback
+} from 'react-native'
 import React, { useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import {ParamListBase, useNavigation} from '@react-navigation/native';
@@ -16,6 +25,10 @@ const Index = () => {
   const newPass = () => {
     navigate('root');
   };
+
+  const dismissKeyboard = () => {
+    Keyboard.dismiss();
+  };
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [hidePassword, setHidePassword] = useState(true); // True: Password gizli, False: Göster
@@ -24,46 +37,47 @@ const Index = () => {
     setHidePassword(!hidePassword);
   };
   return (
-    <SafeAreaView style={styles.container} >
+   <TouchableWithoutFeedback onPress={dismissKeyboard}>
+     <SafeAreaView style={styles.container} >
+       <View style={styles.selectContainer}>
+         <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
+           <AntDesign name="left" size={24} color="black" />
+         </TouchableOpacity>
+       </View>
 
-      <View style={styles.selectContainer}>
-        <TouchableOpacity style={styles.buttonContainer} onPress={geriGit}>
-          <AntDesign name="left" size={24} color="black" />
-        </TouchableOpacity>
-      </View>
+       <View style={styles.entryContainer} >
+         <Text style={styles.headerText} >
+           Yeni şifrenizi belirleyin
+         </Text>
 
-      <View style={styles.entryContainer} >
-        <Text style={styles.headerText} >
-          Yeni şifrenizi belirleyin
-        </Text>
+         <Text style={styles.headerContent} >
+           Şifrenizde büyük harf, küçük harf, rakam ve özel karakter içermesini öneririz.
+         </Text>
+       </View>
 
-        <Text style={styles.headerContent} >
-          Şifrenizde büyük harf, küçük harf, rakam ve özel karakter içermesini öneririz.
-        </Text>
-      </View>
+       <TextInput
+           style={styles.input}
+           placeholder="Şifre"
+           secureTextEntry={hidePassword} // Şifre gizli ise true, değilse false
+           value={password}
+           onChangeText={(text) => setPassword(text)}
+       />
+       <TextInput
+           style={styles.input}
+           placeholder="Şifreyi Onayla"
+           secureTextEntry={hidePassword} // Şifre gizli ise true, değilse false
+           value={confirmPassword}
+           onChangeText={(text) => setConfirmPassword(text)}
+       />
+       <TouchableOpacity onPress={togglePasswordVisibility} style={styles.toggleButton}>
+         <Text style={{ color: '#33D49D', fontWeight: '700', lineHeight: 19.6, letterSpacing: 0.2 }}>{hidePassword ? 'Göster' : 'Gizle'}</Text>
+       </TouchableOpacity>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Şifre"
-        secureTextEntry={hidePassword} // Şifre gizli ise true, değilse false
-        value={password}
-        onChangeText={(text) => setPassword(text)}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Şifreyi Onayla"
-        secureTextEntry={hidePassword} // Şifre gizli ise true, değilse false
-        value={confirmPassword}
-        onChangeText={(text) => setConfirmPassword(text)}
-      />
-      <TouchableOpacity onPress={togglePasswordVisibility} style={styles.toggleButton}>
-        <Text style={{ color: '#33D49D', fontWeight: '700', lineHeight: 19.6, letterSpacing: 0.2 }}>{hidePassword ? 'Göster' : 'Gizle'}</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={newPass} style={styles.buttonEnvironment} >
-        <Text style={styles.sendCode} >Kodu Gönder</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+       <TouchableOpacity onPress={newPass} style={styles.buttonEnvironment} >
+         <Text style={styles.sendCode} >Şifremi Güncelle</Text>
+       </TouchableOpacity>
+     </SafeAreaView>
+   </TouchableWithoutFeedback>
   )
 }
 

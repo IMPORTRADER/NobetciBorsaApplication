@@ -1,11 +1,8 @@
 import React from 'react'
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'
-import { SvgXml } from 'react-native-svg';
 import Svg, { Path } from 'react-native-svg';
 import { Feather } from '@expo/vector-icons';
 import Watchlist from '../../components/Watchlist';
-import AlertScreen from '../AlertScreen';
-
 
 const { width, height } = Dimensions.get('window')
 // @ts-ignore
@@ -20,6 +17,8 @@ const ImageSVG = ({ width, height, color }) => (
 
 
 function Index() {
+
+
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
